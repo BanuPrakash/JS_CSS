@@ -346,6 +346,9 @@ user.company.name;
 JSON with behaviour:
 
 ```
+
+window.name = "Sample JS";
+
 var user = {
     "name": "Peter",
     "email": "peter@adobe.com",
@@ -354,10 +357,80 @@ var user = {
     }
 }
 
-user.getData(); // works
+user.getData(); // works ==> getData(user)
 
 var fn = user.getData; // ?
 
-fn();
+console.log(fn()); // executes in "window" context ==> window.name and window.email
+
+var fn2 = user.getData.bind(user);
+```
+fn2 is 
+{
+        return this.name + ", " + this.email
+}
+```
+var data = user.getData(); 
+```
+    data is
+    Peter , peter@adobe.com
+
+```
+
+console.log(fn2());
+
+function task(fn) {
+    setTimeout(function(fn) {
+            fn();
+    }, 1000);
+}
+
+task(user.getData.bind(user));
+
+```
+
+object.behaviour(arguments);
+
+JS builtin methods: call and apply
+
+```
+function update(name) {
+    this.name = name;
+}
+
+var user = {
+    "name": "Peter",
+    "email": "peter@adobe.com"
+}
+
+var product = {
+    name: "iPhone",
+    price: 990000.00
+}
+// method.invoke(context, arg); --> Java ==> Reflection API
+
+update.call(product, "One Plus Nord");
+
+update.call(user, "Amy");
+
+OR
+
+update.apply(user, ["Amy"]);
+
+```
+
+Task Online exam:
+
+```
+Question:
+    text, options[], answer
+    isCorrect method
+
+Quiz:
+    question[],
+    score,
+    index
+    nextQuestion() ==> displyScore() if all questions attempted,
+    guess(answer)
 
 ```
