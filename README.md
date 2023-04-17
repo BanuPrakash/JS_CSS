@@ -274,8 +274,90 @@ instance methods ==> getArea()
 static method ==> equals
 
 r1.getArea();
-if(r1.equals(r2)) {
+if(Reactangle.equals(r1, r2)) {
     // 
 }
 
 
+Solution:
+
+```
+    function Rectangle(w, b) {
+        this.width = w;
+        this.breadth = b;
+    }
+
+    Rectangle.prototype.getArea = function() {
+        return this.width * this.breadth;
+    }
+
+    Rectangle.equals = function(r1, r2) {
+        if(r1.width === r2.width && r1.height === r2.heigth) {
+            return true;
+        }
+        return false;
+    }
+
+var r1 = new Rectangle(3,4);
+var r2 = new Rectangle(4,5);
+
+if(Rectangle(r1, r2)) {
+    ...
+}
+
+```
+
+
+3) JSON ==> JavaScript Object Notation for Singleton instance
+[] ==> array
+var data = {}; // object, [old def: Jagged Array]
+key/value pair where key is always a string and value can be: number, string, boolean, object, array, function, undefined
+
+```
+var user = {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+            "street": "Victor Plains",
+            "suite": "Suite 879",
+            "city": "Wisokyburgh",
+            "zipcode": "90566-7771",
+            "geo": {
+                "lat": "-43.9509",
+                "lng": "-34.4618"
+                }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+        "name": "Deckow-Crist",
+        "catchPhrase": "Proactive didactic contingency",
+        "bs": "synergize scalable supply-chains"
+    }
+};
+
+user.address.city;
+user.company.name;
+
+``
+
+JSON with behaviour:
+
+```
+var user = {
+    "name": "Peter",
+    "email": "peter@adobe.com",
+    getData: function() {
+        return this.name + ", " + this.email
+    }
+}
+
+user.getData(); // works
+
+var fn = user.getData; // ?
+
+fn();
+
+```
