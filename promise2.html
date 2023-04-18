@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getFlights() {
+            return new Promise((resolve, reject) => {
+                setTimeout( () => {
+                       resolve("Got Flights from server ..."); 
+                }, 2000);
+            });
+        }
+
+        function getHotels() {
+            return new Promise((resolve, reject) => {
+                setTimeout( () => {
+                       resolve("Got Hotels from server ..."); 
+                }, 3000);
+            });
+        }
+
+        console.time("travel-profile");
+        Promise.all([getFlights(), getHotels()]).then(values => {
+            console.timeEnd("travel-profile");
+            console.log('Flights' , values [0]);
+            console.log('Hotels' , values [1]);
+        }, (err) => console.log("Service unavailable!!!"));
+
+        console.log("Bye!!!");
+    </script>
+</body>
+</html>

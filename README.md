@@ -480,6 +480,176 @@ function card(p) {
     `
 }
 
-====
+Task:
+try filter, map and reduce from endpoints 
+https://dummyjson.com/
 
-Array has builtin HOF --> map, filter, reduce, ..
+Task:
+
+get sum of all mobiles from product[]
+----------------------------
+
+
+function add(x, y) {
+    return x + y;
+}
+
+// HOF
+function adder(base) {
+    return function(value) {
+        return base + value;
+    }
+}
+
+let fiveAdder = adder(5);
+
+fiveAdder(2); // 7 
+fiveAdder(4);  // 9
+
+ memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+
+ getProduct(4); --> API call to server --> Server hits DB --> results converted to representation {JSON / XML} --> send JSON to client
+
+ getProduct(4); --> get from cache
+
+===================================================
+
+ECMA 2015 / ES 6 JavaScript version features
+Pre-processor / Transpile / Transcompiler
+Polyfill:  A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support
+
+ES 6 ==> babel / tracuer ==>  ES 5
+core-js or bluebird ...
+
+=========
+ECMA 2015 features:
+1) block level scope
+let and const instead of var // let and const are not hoisted
+
+var a = 20;
+var b = 15;
+function add(x, y) {
+    var result = x + y;
+    c = 100;
+    if(a > b) {
+        let data = a + b;
+    }
+    console.log(data, c);
+    return result;
+}
+add(10,30);
+console.log(data, c, a, b);
+---
+// IIFE
+if(a > b) {
+         (
+                var data = a + b;
+                 console.log(data, c);
+        )();
+    }
+    console.log(data, c);
+
+2) Arrow functions
+
+```
+function filter(elems, predicate) {
+    var result = [];
+    forEach(elems, function(e) {
+        if(predicate(e)) {
+            result.push(e);
+        }
+    });
+    return result;
+}
+
+USing Arrow:
+
+function filter(elems, predicate) {
+    var result = [];
+    forEach(elems, (e) => {
+        if(predicate(e)) {
+            result.push(e);
+        }
+    });
+    return result;
+}
+var mobiles = filter(products, p => p.category === 'mobile');
+
+```
+
+3) Destructuring
+
+var colors = ["red", "green", "blue", "orange"];
+// old way colors[0], colors[1]
+var [r,g] = colors;
+
+var [r,g, ...others] = colors;
+
+var employee  = {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "company": "Adobe"
+};
+
+let {name, email} = employee;
+
+console.log(name, email);
+
+// console.log(employee.name, employee.email);
+
+4) clone
+
+
+var employee  = {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "company": "Adobe"
+};
+
+var ref = employee;
+ref.username = "Brad"; // reference --> pointer
+
+employee.username will also be "Brad";
+
+let empClone = {...employee};
+
+var data = [7,3,21,11];
+
+var dataCpy = [...data];
+
+5) Promise is for any async functions
+    make a call to promise aPI ==> status to pending
+    based on operations within the function => can return fulfilled / rejected
+
+    getUsers();
+
+6) async and await ==> simplfies using Promise api
+ converts async block to sync block of code
+ Promise --> Callback hell
+
+ getConnection().then(connetion => {
+    getProjects(connection).then(project => {
+        getEmployees(project).then(employees => {
+            getAddress(employees).then(address => {
+                /....
+            })
+        });
+    })
+ })
+
+ --
+ fetch("https://jsonplaceholder.typicode.com/users")
+ .then(response => response.json())
+ .then(data => console.log(data));
+
+
+
+
+
+
+
+

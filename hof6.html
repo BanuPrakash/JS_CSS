@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function memo(fn) {
+            var cache = {};
+            return function(args) {
+                if(!cache[args]) {
+                    cache[args] = fn(args);
+                }
+                return cache[args];
+            }
+        }
+
+        function fibanocci(num) {
+            return (num == 0 || num == 1)? num : fibanocci(num - 1) + fibanocci(num - 2);
+        }
+
+        var memFib = memo(fibanocci); // Closure --> fn : fibanocci and cache: {}
+        console.time("first");
+            console.log(memFib(34));
+        console.timeEnd("first");
+
+        console.time("second");
+            console.log(memFib(34));
+        console.timeEnd("second");
+
+    </script>
+</body>
+</html>
