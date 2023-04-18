@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = [4,3,9,7,6,2];
+        // Write Once --> OCP
+        function filter(nos, action) {
+            var result = [];
+                for(var i = 0 ; i <nos; i++) {
+                    if(action(nos[i])) {
+                        result.push(nos[i]);
+                    }
+                }
+            return result;
+        }
+
+        function isEven(e) {
+            return e % 2 === 0;
+        }
+
+        var evens = filter(data, isEven);
+
+        function isOdd(e) {
+            return e % 2 !== 0;
+        }
+        var odss = filter(data, isOdd);
+
+        var products = [
+            { "id": 1, "name": "iPhone", "price": 124447.44, "category": "mobile" },
+            { "id": 2, "name": "Onida", "price": 4444.44, "category": "tv" },
+            { "id": 3, "name": "OnePlus 6", "price": 98444.44, "category": "mobile" },
+            { "id": 4, "name": "HDMI connector", "price": 2444.00, "category": "computer" },
+            { "id": 5, "name": "Samsung", "price": 68000.00, "category": "tv" }
+        ];
+
+        function isMobile(p) {
+            return p.category === 'mobile';
+        }
+        var mobiles = filter(products, isMobile);
+    </script>
+</body>
+</html>

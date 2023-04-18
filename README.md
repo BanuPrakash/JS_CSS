@@ -434,3 +434,34 @@ Quiz:
     guess(answer)
 
 ```
+
+Day 2
+
+JS Engine, Stack, Heap, Callback Queues {Micro and MacroTask}, Event loop, WebApi {threads, apis, ...}
+
+JS variables "var" and implict variable without "var"; Hoisting {function and global level}
+
+Creation Context and Execution context
+
+Objects: Object, function constructor and JSON {}
+
+state and behaviour. call, apply and bind methods
+
+-----
+Functional style of Programming
+
+HOF --> High Order functions
+* Functions which accept function as arguments
+* Functions which return a function
+
+treat function as first-class members 
+
+Using HOF we can implment OCP --> Open for extension and closed for change [SOLID]
+
+var data = [5,22, 63, 12, 3];
+
+forEach(data, console.log);
+forEach(data, alert);
+
+HOF: filter, map, reduce, ...
+
