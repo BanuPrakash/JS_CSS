@@ -647,9 +647,100 @@ var dataCpy = [...data];
  .then(data => console.log(data));
 
 
+7) Generators
+are functions which return series of data 
 
+function* name() {}
 
+8) class 
 
+``
+class Product {
+    name; // state --> instance var
+    price; // state --> instance var
+    constructor(name = "", price = 0.0) {
+        this.name = name;
+        this.price = price;
+    }
 
+    getName() {
+        return this.name;
+    }
 
+    getPrice() {
+        return this.price;
+    }
+}
+
+var p1 = new Product("T", 4545.22);
+p1.getName();
+p1.name; // valid
+
+var p2 = new Product(); // valid
+
+var p3 = new Product("iPhone"); // valid
+```
+# for private variable
+
+class Rectangle {
+    #width;
+    #breadth;
+    constructor(w, b) {
+        this.#width = w;
+        this.#breadth = b;
+    }
+
+    static equals(r1, r2) {
+        return ...
+    }
+
+    // getter property
+    get width() {
+        return this.#width;
+    }
+
+// setter property
+    set width(w) {
+        this.#width = w;
+    }
+}
+
+var r1 = new Rectangle(4,5);
+var wd = r1.width; // getter
+
+r1.width = 52; //setter
+
+Rectangle.equals(r1, r2);
+
+====
+
+9) ES 6 modules
+
+lib.js
+```
+export default function forEach(elems, action) {
+///
+}
+
+export function filter(elems, predicate) {
+    //
+}
+// private to module
+function map(elems, transformFn) {
+ //
+}
+```
+
+other.js
+```
+    import forEach, {filter} from './lib';
+
+    forEach(..)
+    filter(...);
+```
+
+Quiz ==> convert to use ES 6 features {class, arrow}, HOF
+Question ==> difficultyLevel ==> filter
+
+-------
 

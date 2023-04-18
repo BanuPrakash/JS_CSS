@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* getData() {
+            console.log("task 1");
+            console.log("task 2");
+            yield {"name": "a", "age": 32}; // use yield to return yield await getProductData()
+            console.log("task 3");
+            yield 100;
+            console.log("task 4");
+            yield "Order placed!!!";
+        }
+
+
+        var iter = getData();
+        // let obj = iter.next();
+        // console.log(obj.value, obj.done);
+        // let num = iter.next();
+        // console.log(num.value, num.done);
+
+        // let msg = iter.next();
+        // console.log(msg.value, msg.done);
+    </script>
+</body>
+</html>

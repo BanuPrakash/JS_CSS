@@ -16,10 +16,10 @@
         async function getUsers() {
             let response = await fetch("https://jsonplaceholder.typicode.com/users"); // blocked
             let data = await response.json(); // blocked
-            console.log(data);
+            return data;
         }
 
-        getUsers();
+        getUsers().then(data => console.log(data));
     </script>
 </body>
 </html>

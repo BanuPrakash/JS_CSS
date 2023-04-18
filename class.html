@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+class Rectangle {
+    #width;
+    #breadth;
+    constructor(w, b) {
+        this.#width = w;
+        this.#breadth = b;
+    }
+
+    static equals(r1, r2) {
+        return true;
+    }
+
+    // getter property
+    get width() {
+        return this.#width;
+    }
+
+// setter property
+    set width(w) {
+        this.#width = w;
+    }
+}
+
+var r1 = new Rectangle(4,5);
+// console.log(r1.#width); // private
+// console.log(r1["#width"]);
+    </script>
+</body>
+</html>
