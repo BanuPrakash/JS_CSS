@@ -468,3 +468,18 @@ HOF: filter, map, reduce, ...
 filter ==> subset [ input is n output can n - x]
 map ==> transform [input is n out is transformed elements of "n"]
 reduce ==> aggregate [ sum(), max(), avg(), count()]
+
+
+function card(p) {
+    return `
+        <div class="card"> 
+            Product Name : ${p.name} <br />
+            Price : ${p.price}
+        </div>
+
+    `
+}
+
+====
+
+Array has builtin HOF --> map, filter, reduce, ..
