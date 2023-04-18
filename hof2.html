@@ -43,6 +43,23 @@
             return p.category === 'mobile';
         }
         var mobiles = filter(products, isMobile);
+
+
+        // Map ==> transform the data
+
+        function map(elems, transformFn) {
+            var result = [];
+            for(var i = 0 ; i < elems.length; i++) {
+                result.push(transformFn(elems[i]));
+            }
+            return result;
+        }
+        function doubleIt(e) {
+            return e * 2;
+        }
+        // [4,3,9,7,6,2];
+       var result =  map(data, doubleIt);
+        // result = [8, 6 , 18, 14, 12, 4]
     </script>
 </body>
 </html>

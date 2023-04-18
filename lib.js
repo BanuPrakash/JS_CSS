@@ -15,3 +15,12 @@ function filter(elems, predicate) {
     });
     return result;
 }
+
+function map(elems, transformFn) {
+    var result = [];
+    forEach(elems, function(e) {
+            result.push(transformFn(e));
+    });
+    return result;
+}
+

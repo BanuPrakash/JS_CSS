@@ -29,6 +29,16 @@
         })
 
         forEach(mobiles, console.log);
+
+        function getName(p) {
+            return p.name;
+        }
+
+        var names = map(products, getName);
+
+        forEach(names, console.log);
+
+        
     </script>
 </body>
 </html>

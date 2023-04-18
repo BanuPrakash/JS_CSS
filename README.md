@@ -465,3 +465,6 @@ forEach(data, alert);
 
 HOF: filter, map, reduce, ...
 
+filter ==> subset [ input is n output can n - x]
+map ==> transform [input is n out is transformed elements of "n"]
+reduce ==> aggregate [ sum(), max(), avg(), count()]
