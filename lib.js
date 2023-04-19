@@ -6,7 +6,7 @@ function forEach(elems, action) {
 }
 
 // HOF
-function filter(elems, predicate) {
+export function filter(elems, predicate) {
     var result = [];
     forEach(elems, function(e) {
         if(predicate(e)) {
