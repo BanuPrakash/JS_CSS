@@ -7,7 +7,28 @@
 
 <body>
     <h1 id="heading">Introduction to DOM</h1>
-
+    <table id="products" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+          var products = [
+            { "id": 1, "name": "iPhone", "price": 124447.44, "category": "mobile" },
+            { "id": 2, "name": "Onida", "price": 4444.44, "category": "tv" },
+            { "id": 3, "name": "OnePlus 6", "price": 98444.44, "category": "mobile" },
+            { "id": 4, "name": "HDMI connector", "price": 2444.00, "category": "computer" },
+            { "id": 5, "name": "Samsung", "price": 68000.00, "category": "tv" }
+        ];
+        // traverse thro products and create one <tr> for one product with <td> having
+            // name, price and categeory
+    </script>
     <p>
         When loading a web page, a browser creates a DOM of the page, which is an application programming interface
         (API) that represents an HTML, XHTML, or XML document as a tree structure.

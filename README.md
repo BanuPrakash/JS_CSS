@@ -885,10 +885,26 @@ document.querySelector("#planets"); // by id #
 
 document.querySelector("#planets li:nth-child(2)");
 
-
 document.querySelectorAll(".programming"); // by class .
 
 document.querySelector("p"); // by tag
 
+==============================================
 
-======
+DOM creation:
+
+var elem = document.querySelector("#planets")
+var newPlanet = document.createElement("li");
+newPlanet.textContent = "Pluto";
+// parentElem.append(childElem);
+elem.append(newPlanet);
+
+// createElement tr, createElement td
+
+
+
+
+
+
+
+
