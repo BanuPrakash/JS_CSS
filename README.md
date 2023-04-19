@@ -744,3 +744,151 @@ Question ==> difficultyLevel ==> filter
 
 -------
 
+Day 3
+
+Recap: HOF, Closure, ECMAScript 2016 / ES 6
+* let and const
+* arrow
+* Destructuring
+* clone
+* Promise API
+* async await ==> to avoid nested callback issues
+* Generator
+* class ==> constructor, methods , getters , setters and private members [#]
+* ES 6 modules {export and import}
+* template string and new String literal
+
+var name = "Peter";
+var age = 24;
+
+var data = `
+    This is first line  
+    This is My Data
+    Name: ${name} and age: ${age}
+`;
+
+data = "This is first line \n" + "This is My data \n" + "Name : " + name + " Age :" + age;
+
+========================================
+
+Regular expression
+
+var re = //
+OR
+var re = new RegEx("");
+
+/abc/.test("abcde"); ==> true
+/abc/.test("abxcde"); ==> false
+
+Set of Characters
+/[0123456789]/.test("JS in 1992"); // true
+/[0-9]/.test("JS in 1992"); // true
+
+
+\d Any Digit
+\w alpha-numeric [ word]
+\s Space, tab, newline
+\D, \W, \S ==> not of
+. any character
+
++ one or more occurence
+* zero or more
+? zero or one
+
+/\d{1,2}-(\d{1,2} | (A_Za-z){3})-\d{4} \d{1,2}:\d{2}/.text("18-2-2022 5:30"); // true
+
+
+Capture Groups
+
+1.
+const date = "Hire date is 12-10-2009";
+
+const regex = /\d{2}-\d{2}-\d{4}/g
+
+const result = regex.exec(date);
+
+2. 
+const regex = /\d{2}-([A-Z]{3}||[0-9]{1,2})-\d{4}/
+
+
+const regex = /(\d{2})-(\d{2})-(\d{4})/g
+const result = regex.exec(date);
+
+result ==>
+'12-10-2009', '12', '10', '2009', index: 13, input: 'Hire date is 12-10-2009', groups: undefined]
+
+3. 
+const date = "Hire date is 12-10-2009";
+const regex = /(?<day>\d{2})-(?<month>\d{2})-(?<year>\d{4})/g
+<!-- const result = regex.exec(date); -->
+
+const {groups:{day,month, year}} = regex.exec(date); // date.match(regex)
+
+console.log(day , month, year);
+
+
+4. const date = "12-APR-2009";
+const regex = /\d{2}-([A-Z]{3}||[0-9]{1,2})-\d{4}/
+
+console.log(regex.test(date));
+
+---
+
+Look Behind: ?<=
+
+const date = "Hire date is 12-10-2009";
+
+const regex = /(?<=Hire date is).*/g
+
+const result = regex.exec(date);
+
+Look Ahead: ?=
+
+const date = "Hire date is 12-10-2009";
+
+const regex = /.*(?=12-10-2009)/g
+
+------
+
+emailregEx = /^[A-Za-z0-9._]{3,}@[A-Za-z0-9.-]{2,}\.(com|edu|in)$/
+
+/^(?=[A-Za-z0-9@.-]{6,150})[A-Za-z0-9._]{3,}@[A-Za-z0-9.-]{2,}\.(com|edu|in)$/
+
+===============================
+
+DOM ==> Document Object model
+(XML / HTML) ==> Object - cross platform, language independent
+
+1)
+<h1 id="heading">Introduction to DOM</h1>
+
+document.getElementById("heading").textContent
+
+2) var paras = document.getElementsByTagName("p");
+paras.length 
+paras[0].textContent
+
+3) Manipulating Image
+var images =  document.getElementsByTagName("img");
+images[0].src
+
+images[0].src = "./images_dom/dog.jpg"
+
+4)
+var elems = document.getElementsByClassName("programming");
+elems[0].textContent
+
+5) querySelector() and  querySelectorAll()
+use this to get by "tag", "class", "id", "sub selector"
+
+document.querySelector("#planets"); // by id #
+
+document.querySelector("#planets li:nth-child(2)");
+
+
+document.querySelectorAll(".programming"); // by class .
+
+document.querySelector("p"); // by tag
+
+
+======
