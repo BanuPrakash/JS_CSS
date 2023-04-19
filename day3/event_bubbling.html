@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            background-color: antiquewhite;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+        }
+        #inner {
+            background-color: beige;
+            position: absolute;
+            top:25px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Bubbling and Capturing</h1>
+
+    <div id ="outer">
+        Outer
+        <p id="inner">
+            Inner
+            <button>click me!!!</button>
+        </p>
+    </div>
+
+    <script>
+        var elems = document.querySelectorAll("*");
+
+        for(elem of elems) {
+            elem.addEventListener("click", function(evt) {
+                console.log("Bubble : ", evt.currentTarget.tagName);
+                // evt.stopPropagation();
+            });
+            elem.addEventListener("click", function(evt) {
+                console.log("Capture : ", evt.currentTarget.tagName);
+                //evt.stopPropagation();
+            }, true);
+        }
+    </script>
+</body>
+</html>
