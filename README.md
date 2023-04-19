@@ -901,6 +901,37 @@ elem.append(newPlanet);
 
 // createElement tr, createElement td
 
+Task:
+
+use Fetch API to get data from 
+"https://jsonplaceholder.typicode.com/photos"
+
+and build UI using DOM --> DIV or table
+--------------------
+
+Events and EventHandling
+
+* An event is a signal that something happend
+
+* all DOM nodes generate events
+
+Common events:
+* Mouse events: mouseover, mousedown, mouseup, mousemove
+* keyboard event: keydown, keyup
+
+* click , change ==> high level events
+* Form events: submit, focus, blur
+
+* DOMContentLoaded ==> DOM is fully built
+
+Event Handler --> react on events --> handler function
+* Register handler
+  element.addEventListener(event, handlerFn);
+
+* Remove handler
+    element.removeEventListener(event, handlerFn);
+
+
 
 
 

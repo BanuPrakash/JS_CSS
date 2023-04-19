@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed {
+            text-decoration-line: line-through;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="first">First</button>
+    <button type="button" id="second">Second</button>
+    <ul id="todo">
+        <li>Prepare Breakfast</li>
+        <li>Read Newspaper</li>
+        <li>Reply to emails</li>
+        <li>Banking</li>
+    </ul>
+    <p>
+        document.getElementById("first").addEventListener("click", doTask)
+        document.getElementById("second").addEventListener("click", doTask)
+        document.getElementById("second").removeEventListener("click", doTask)
+    </p>
+    <script>
+        function doTask(event) {
+            console.log(event.target.id);
+        }
+        function completeTask(event) {
+            event.target.classList.toggle("completed")
+        }
+        document.getElementById("todo").addEventListener("click", completeTask);
+    </script>
+</body>
+</html>

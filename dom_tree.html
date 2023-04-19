@@ -7,6 +7,7 @@
 
 <body>
     <h1 id="heading">Introduction to DOM</h1>
+    <h1>Products</h1>
     <table id="products" border="1">
         <thead>
             <tr>
@@ -28,6 +29,22 @@
         ];
         // traverse thro products and create one <tr> for one product with <td> having
             // name, price and categeory
+        
+        var tbody = document.querySelector("#products tbody");
+        products.forEach(p => {
+            var tr = document.createElement("tr");
+            var td = document.createElement("td");
+            td.textContent = p.name;
+            tr.append(td);
+            td = document.createElement("td");
+            td.textContent = p.price;
+            tr.append(td);
+            td = document.createElement("td");
+            td.textContent = p.category;
+            tr.append(td);
+            tbody.append(tr);
+        });
+
     </script>
     <p>
         When loading a web page, a browser creates a DOM of the page, which is an application programming interface
