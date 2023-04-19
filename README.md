@@ -932,6 +932,45 @@ Event Handler --> react on events --> handler function
     element.removeEventListener(event, handlerFn);
 
 
+===========================
+
+<input type="text" required>
+<input type="email" required>
+<input type="text" minlength="6">
+<input type="text" pattern="[a-z]{3,5}">
+<input type="number" min="1" max="100">
+
+Form Constraint Validation API:
+properties:
+validity:
+validationMessage
+patternMismatch
+tooLong
+typeMismatch
+...
+
+methods:
+checkValidity()
+reportValidity()
+setCustomValidity(message)
+
+```
+ <form>
+        <input type="t1" pattern="[0-9]{4}" value="1234" />
+        <input type="t2" pattern="[0-9]{4}" value="ABCD" />
+        <button type="submit">submit</button>
+ </form>
+
+//document.getElementById("t1").validity.patternMismatch ==> false
+// document.getElementById("t2").validity.patternMismatch ==> true
+
+ <input type="number" id="t1" max="10" value="2" />
+//document.getElementById("t2").validity.rangeOverflow
+
+Try: type="email"
+document.getElementById("t2").validity.typeMismatch
+```
+
 
 
 

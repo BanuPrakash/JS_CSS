@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="email" id="email" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        var email =   document.getElementById("email");
+        email.addEventListener("input", function(event) {
+            if(email.validity.typeMismatch) {
+                email.setCustomValidity("Expecting Email!!!");
+            }     else {
+                email.setCustomValidity("");
+            }
+        });
+    </script>
+</body>
+</html>

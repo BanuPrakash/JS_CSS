@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            width: 500px;
+            height: 500px;
+            border: 2px solid blue;
+            position: absolute;
+            top: 100px;
+            left: 200px;
+        }
+
+        #imgstyle {
+            width: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+    </div>
+
+    <img src="../images_dom/dog.jpg" id="imgstyle" >
+    <script>
+        var div = document.getElementById("parent");
+        var img = document.getElementById("imgstyle");
+        // div.addEventListener("mouseover", function(event) {
+        //     event.target.style.backgroundColor = 'grey';
+        // });
+
+        // div.addEventListener("mouseout", function(event) {
+        //     event.target.style.backgroundColor = 'white';
+        // });
+        
+        // div.addEventListener("mousemove", function(event) {
+        //    console.log(event.clientX, event.clientY)
+        // });
+        div.addEventListener("mousedown", function(event) {
+           img.style.top = event.clientY + "px";
+           img.style.left = event.clientX + "px";
+             
+        });
+        
+    </script>
+</body>
+</html>
