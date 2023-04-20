@@ -984,7 +984,16 @@ Day 3: EventHandling and DOM
 
 WebApi --> threads [Promise, setTimeout, setInterval, fetch, ....]
 
+WorkerThread:
 JS --> Main Thread
+
+ServiceWorker --> Progressive Web App
+--> cache commonly used resources
+--> offline access
+--> Push notications [ firebase ]
+==> treat websites as app
+
+
 
 
 
