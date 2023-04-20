@@ -9,7 +9,18 @@
 </head>
 
 <body>
-    <script src="sample.js">
+    <input type="number" id="num" />
+    <button type="button" id ="btn">Get Fibanocci</button>
+    <div id="result"></div>
+    <script>
+        const myWorker = new Worker("./worker.js");
+        document.getElementById("btn").addEventListener("click", (evt) => {
+            myWorker.postMessage(+document.getElementById("num").value);
+        });
+
+        myWorker.onmessage = (e) => {
+            document.getElementById("result").textContent = e.data;
+        }
     </script>
 </body>
 

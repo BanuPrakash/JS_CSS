@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 150px;
+            background-color: lightblue;
+            margin-top: 20px;
+            margin-left: auto;
+            padding: 20px;
+            margin-right: auto;
+            text-align: center;
+             transition: background-color 5s ease-in, 
+                    color 8s ease-out,
+                    transform 5s linear; 
+            transform-style: preserve-3d;
+        }
+
+        .box:hover {
+            background-color: olive;
+            color: white;
+            cursor: pointer;   
+            /* width: 800px; */
+            transform: rotateY(360deg);
+         } 
+
+         .title {
+             transform: translateZ(50px)
+         }
+
+         .body {
+            transform: translateZ(20px)
+         }
+
+          
+    </style>
+</head>
+
+<body>
+    <h1>CSS3 Transition and Transform</h1>
+    <div class="box">
+        <div class="title">
+            <h1>CSS3 Animations</h1>
+            <p>Transition and Transform</p>
+        </div>
+        <div class="body">
+            <b>Example for CSS 3 Animations</b>
+        </div>
+    </div>
+    
+</body>
+
+</html>
