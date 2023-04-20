@@ -16,13 +16,12 @@ self.addEventListener("install", (evt) => {
     )
 });
 
-
 self.addEventListener("activate", (evt) => {
     console.log("activate!!!");
 });
 
 self.addEventListener("fetch", (evt) => {
-    console.log("fetch!!!");
+    console.log("fetch!!!", evt.request);
     evt.respondWith(
         caches.match(evt.request).then(function(response) {
             if(response) {
@@ -30,6 +29,9 @@ self.addEventListener("fetch", (evt) => {
                 return response;
             } 
             console.log("No response found in cache!!!");
+            return fetch(evt.request).then(function(response) {
+                return response; 
+            })
         })
     );
 });
