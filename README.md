@@ -971,10 +971,20 @@ Try: type="email"
 document.getElementById("t2").validity.typeMismatch
 ```
 
+Day 4
 
 
+Task 1: Event handling radio buttons, text box and button
 
+Task 2: Quiz with DOM
 
+Task 3: Shopping Cart
+
+Day 3: EventHandling and DOM
+
+WebApi --> threads [Promise, setTimeout, setInterval, fetch, ....]
+
+JS --> Main Thread
 
 
 
