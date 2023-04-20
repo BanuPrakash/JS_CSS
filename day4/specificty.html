@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 0, 0,  2, 0 */
+        .list > .list-item {
+            color:green
+        } 
+         /* 0, 0,  1, 0 */
+        .list {
+            color: red;
+        }
+        /* 0, 0, 1, 1 */
+        ul > .list-item {
+            color: brown;
+        }
+
+        /* 0, 1, 0, 1 */
+        #navigation li {
+            color: cadetblue;
+        }
+
+        /* avoid */
+        li {
+            color: darksalmon !important;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: aqua;">Specificity</h1>
+    <ul class="list">
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+    </ul>
+
+    <hr />
+    <div id="navigation">
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -993,10 +993,124 @@ ServiceWorker --> Progressive Web App
 --> Push notications [ firebase ]
 ==> treat websites as app
 
-====
+=====================
 
 
-20 min break
+CSS --> Cascacding Style Sheets
+CSS --> rules and set of css properties {} block
+
+1. Element Selector , type or Tag selector
+p { color: blue; }
+
+2. class selector
+
+.data {
+    color: red;
+}
+
+<p class="data"> </p>
+
+3. ID selector
+#elem {
+
+}
+<p id="elem"></p>
+
+4. Universal selector "*"
+
+* {
+    margin :10px;
+    padding:10px;
+    font-family : "arial"
+}
+
+5. Descendatant selector :
+matches all elements that are desecendent of a specified element
+
+div p {
+    color:red;
+}
+<div>
+    <p>red</p>
+    <blockquote><p>red</p></blockquote>
+    <p>red</p>
+</div>
+
+<p>this wont  get the style</p>
+
+6) Child selector (>)
+#example > li { border : 1px solid red}
+<ul id="example">
+    <li>Programming Languages</li>
+        <ul> 
+            <li>C</li>
+            <li>C++</li>
+            ...
+        </ul>
+    </li>
+    <li> Testing frameworks</li>
+        <ul>
+            <li>JUnit</li>
+            <li>Mocha</li>
+        </ul>
+    </li>
+</ul>
+
+only Prog,, and Test frameworks will have border
+
+7) Pseudo selectors (:)
+    7.1) Link related 
+        :visted
+        :hover
+        :active
+
+        a:hover {
+            property : value
+        }
+    7.2) input related
+        :focus
+        :enabled
+        :disabled
+        :cheked
+        :required
+        :valid
+        :invalid
+
+        <input type="text" name="firstname">
+
+        input:focus {
+            background-color: lightyellow;
+        }
+
+    7.3) position based
+        :first-child
+        :last-child
+        :nth-child(n)
+
+        div:nth-child(3) {
+            property: value
+        }
+
+---
+
+Inheritance
+<body>
+    <p>.... </p>
+    <p> ..... <span>. ... </span></p>
+</body>
+
+body {
+    color:blue
+}
+// override
+span {
+    color: black
+}
+ 
+Specificity : decides how css properties are applied
+
+
+
 
 
 
