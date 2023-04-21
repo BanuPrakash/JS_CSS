@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        .slider-item {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        #outer {
+            overflow: hidden;
+        }
+
+        .slide-transition {
+            transition: transform 0.7s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="slider-container" class="slider-container-transition">
+            <div class="slider-item" data-position="1">Item 1</div>
+            <div class="slider-item" data-position="2">Item 2</div>
+            <div class="slider-item" data-position="3">Item 3</div>
+            <div class="slider-item" data-position="4">Item 4</div>
+        </div>
+        <button id="move">Move Item</button>
+    </div>
+    <script>
+        var num_items = document.querySelectorAll(".slider-item");
+        var current = 1;
+        document.querySelectorAll('.slider-item').forEach(function(elem, index) {
+            elem.style.order = index + 1
+        });
+
+        document.querySelector("#move").addEventListener("click", () => {
+            next();
+        });
+
+        document.querySelector("#slider-container").addEventListener("transitionend", () => {
+            changeOrder();
+        }); 
+
+        function changeOrder() {
+
+            if(current == num_items) {
+                current = 1;
+            } else {
+                current++;
+            }
+           
+           
+            let order = 1;
+            for( let i = current; i <= num_items; i++) {
+                document.querySelector(".slider-item[data-position='" + i +"']").style.order = order;
+                order ++;
+            }
+
+            for( let i = 1 ; i < current; i++) {
+                document.querySelector(".slider-item[data-position='" + i +"']").style.order = order;
+                order ++;
+            }
+            document.querySelector("#slider-container").classList.remove('slide-transition');
+            document.querySelector("#slider-container").style.transform = 'translateX(0)'
+        }
+
+        function next() {
+            document.querySelector("#slider-container").classList.add('slide-transition');
+            document.querySelector("#slider-container").style.transform = 'translateX(-100%)'
+        }
+    </script>
+</body>
+</html>

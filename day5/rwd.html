@@ -6,6 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .wrapper > * {
+            flex: 1 1 100%;
+        }
+
+        #navbar {
+           list-style-type: none;
+           margin: 0;
+           width: 200px;
+        }
+
+        ul#navbar li a {
+            display: block;
+            text-decoration: none;
+        }
+
+        @media screen and (min-width:600px) {
+            .aside {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media screen and (min-width:800px) {
+            .main {
+                flex: 3 0 0px;
+                order: 2;
+            }
+
+            .aside-1 {
+                order:4
+            }
+            .aside-2 {
+                order:1
+            }
+
+            .footer {
+                order:4
+            }
+        }
+    </style>
 </head>
 
 <body>
