@@ -1130,6 +1130,8 @@ display:flex;
 ------
 https://farm8.staticflickr.com/7364/9797687423_89d0b3040b_z_d.jpg
 
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_picture
+
 IntersectionObserver
 RWD page --> @media 
 Core Web Vitals
