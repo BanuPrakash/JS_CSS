@@ -1146,7 +1146,16 @@ Responsive Web design
 
 @media query
 
+=========
 
+Observer:
+IntersectionObserver, PerformanceObserver, ResizeObserver, MutationObserver
+
+PerformanceObserver ==> core web vitals ==> FID, CLS, LCP
+
+ResizeObserver ==> apply different styles based on element resize
+
+IntersectionObserver
 
 
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .card {
+            background-color: blanchedalmond;
+            border: 1px solid rebeccapurple;
+            transform: translateX(100px);
+            opacity: 0;
+            transition: 150ms;
+        }
+
+        .show {
+            transform: translate(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">THIS IS FIRST CARD</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card" data-src="img">This is card</div>
+        <div class="card">This is card</div>
+        <div class="card">THIS IS LAST CARD</div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll(".card");
+        var observer = new IntersectionObserver(entries => {
+           entries.forEach(entry => {
+            entry.target.classList.toggle('show', entry.isIntersecting);
+            // entry.target.src = entry.target.data-img ==> lazy load the image
+            if(entry.isIntersecting) {
+                observer.unobserve(entry.target);
+            }
+           });
+        }, {
+            threshold: .5
+        });
+
+
+        cards.forEach(card => {
+            observer.observe(card);
+        })
+        
+    </script>
+</body>
+</html>
