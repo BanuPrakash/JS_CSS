@@ -1109,6 +1109,35 @@ span {
  
 Specificity : decides how css properties are applied
 
+div is block
+span is inline
+
+<span>Hello</span><span>World</span>
+HelloWorld
+
+<div>Hello</div><div>World</div>
+Hello
+World
+
+
+CSS 3 Flexible Box Module
+
+container props:
+display:flex;
+  flex-direction: row | column | row-reverse | column-reverse;
+ justify-content:flex-start| flex-end | center| space-around;
+
+------
+https://farm8.staticflickr.com/7364/9797687423_89d0b3040b_z_d.jpg
+
+IntersectionObserver
+RWD page --> @media 
+Core Web Vitals
+Performance with example
+
+
+
+
 
 
 

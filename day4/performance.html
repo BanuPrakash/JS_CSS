@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .resizable-box {
+            height: fit-content;
+            background: green;
+            border: 2px solid;
+            padding: 20px;
+            resize: both;
+            overflow: auto;
+        }
+
+        .container {
+            height: 1000px;
+            position: absolute;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script>
+
+        const appDiv = document.getElementById('app');
+        appDiv.innerHTML = `<h1>Sample!</h1>`;
+        appDiv.style.width = '60%';
+        appDiv.classList.add('resizable-box');
+
+        const observer = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+                // `name` will be either 'first-paint' or 'first-contentful-paint'.
+                const metricName = entry.name;
+                const time = Math.round(entry.startTime + entry.duration);
+
+                console.table({
+                    eventCategory: 'Performance Metrics',
+                    eventAction: metricName,
+                    eventValue: time,
+                    nonInteraction: true,
+                });
+            }
+        });
+
+        // Start observing paint entries.
+        observer.observe({ entryTypes: ['paint', 'largest-contentful-paint'] });
+
+        const randomNumber  = (from, to) => {
+           return ~~(Math.random() * (to - from)) + from;
+        }
+        const COLORS = ['red','green','blue','pink'];
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (let entry of entries) {
+                entry.target.style.background = COLORS[randomNumber(0, 4)];
+            }
+        });
+
+        resizeObserver.observe(appDiv);
+
+    </script>
+</body>
+
+</html>
