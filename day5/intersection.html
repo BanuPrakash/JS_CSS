@@ -48,6 +48,23 @@
     </div>
 
     <script>
+        // FIP, FCP, LCP, CLS
+        const perfObserver = new PerformanceObserver(list => {
+            list.getEntries().forEach( entry => {
+                const metricName = entry.name;
+                const time = Math.round(entry.startTime + entry.duration);
+                console.table({
+                    eventCategory: 'Performance Metrics',
+                    eventName : metricName,
+                    eventValue : time
+                });
+                // ga();
+            })
+        });
+
+        perfObserver.observe({entryTypes:['paint']})
+
+        // intersection observer
         const cards = document.querySelectorAll(".card");
         var observer = new IntersectionObserver(entries => {
            entries.forEach(entry => {
@@ -60,12 +77,9 @@
         }, {
             threshold: .5
         });
-
-
         cards.forEach(card => {
             observer.observe(card);
         })
-        
     </script>
 </body>
 </html>

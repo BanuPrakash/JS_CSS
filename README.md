@@ -1157,7 +1157,48 @@ ResizeObserver ==> apply different styles based on element resize
 
 IntersectionObserver
 
+===
 
+Memory Leak and Perfomance
+
+Core Web Vitals:
+
+FID:
+1) better server
+2) CDN
+3) Minify and uglify css and js
+4) css-loader and style-loader ==> webpack {js build tools} ==> production code
+    <link rel="stylesheet" href="a.css">
+    <link rel="stylesheet" href="b.css">
+    code will be put inline inside HTML
+    <style>
+        ...
+    </style>
+
+5) lazy loading of "js" , "images", 
+
+<img src="" loading="lazy">
+IntersectionObserver
+
+Concurrent loading of resources
+<script src="" defer or async></script>
+
+async: execute as soon as loaded
+defer: wait for DOM creation to complete and execute
+
+6) 50+ js files are there
+    group them and bundle it
+
+    main.chunk.js ==> 50 js
+    cart.chunk.js --> 30 js --> ES6 dynamic module
+
+    load only required chunk for improve FID
+
+CLS:
+width, height,
+provide placeholder for new content to come
+
+Gulp / Webpack 
 
 
 
